@@ -1,0 +1,123 @@
+{% extends 'buscador/base.html' %}
+
+{% block content %}
+  <style>
+    body {
+      background-image: url('https://tunavegador.com/wp-content/uploads/2022/02/Los-6-mejores-sitios-web-utiles-de-Web-3.0.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      position: relative;
+    }
+
+    .date {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 14px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      padding-top: 20px;
+    }
+
+    .brave-search-form {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .input-group {
+      width: 500px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 1px solid #c4c4c4;
+      border-radius: 24px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin-top: 30px;
+    }
+
+    .form-control {
+      border-radius: 24px !important;
+      border-color: transparent !important;
+      padding: 10px !important;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .btn-outline-primary {
+      border-radius: 24px !important;
+      border-color: transparent !important;
+      background-color: #f44336;
+      color: white;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #d32f2f;
+    }
+
+    .btn-search {
+      border-top-right-radius: 24px !important;
+      border-bottom-right-radius: 24px !important;
+      background-color: #f44336;
+      border-color: transparent !important;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-search:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+
+  <div class="date" id="clock">
+    <script>
+      function updateClock() {
+        var currentTime = new Date();
+        var date = currentTime.toDateString();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+        // Ajustar los minutos y segundos a dos dígitos si son menores que 10
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        // Mostrar la fecha y hora actualizada en el elemento con id "clock"
+        document.getElementById("clock").innerHTML = date + ' ' + hours + ':' + minutes + ':' + seconds;
+      }
+
+      // Actualizar el reloj cada segundo
+      setInterval(updateClock, 1000);
+
+      // Mostrar la hora por primera vez
+      updateClock();
+    </script>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="d-flex justify-content-center align-items-center">
+      <h1 class="display-4">El que busca encuentra </h1>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <form class="brave-search-form" method="get" action="{% url 'buscar' %}">
+        <div class="input-group">
+          <input class="form-control border-0" type="text" name="query" placeholder="Buscar en la web" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary btn-search" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

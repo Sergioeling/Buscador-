@@ -56,8 +56,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "proyecto.urls"
@@ -122,6 +120,7 @@ TIME_ZONE = 'America/Mexico_City'  # Cambia a la zona horaria de tu elección
 USE_I18N = True
 
 USE_TZ = False
+
 
 
 # Static files (CSS, JavaScript, Images)

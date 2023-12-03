@@ -29,11 +29,7 @@ SECRET_KEY = "django-insecure-*=x=+yf)fpcfdue@%7#uqupye4z+woi=+hc)676y%zu7#z984s
 DEBUG = True
 
 ALLOWED_HOSTS = ['buscadorstx1.azurewebsites.net','127.0.0.1']
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Application definition
 
@@ -113,20 +109,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'America/Mexico_City'  # Cambia a la zona horaria de tu elección
-
-USE_I18N = True
-
-USE_TZ = False
 
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
+
+
+
+
+SSTATIC_URL = '/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Default primary key field type

@@ -52,7 +52,7 @@ def buscar(request):
         query = request.GET.get('query', '')
         raices = procesar_consulta(query)
         # Reemplazar con la ruta correcta
-        archivo_path = 'C:/Users/sergi/Desktop/elquebusca/buscador/index/salida.txt'
+        archivo_path = 'buscador/index/salida.txt'
         resultados = buscar_urls(raices, archivo_path)
 
         return render(request, 'buscador/resultados.html', {'query': query, 'num_resultados': len(resultados['urls']), 'resultados': resultados})
